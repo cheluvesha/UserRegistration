@@ -46,4 +46,11 @@ public class UserRegistrationTest {
         boolean validate = userRegistration.validPass1UpperCase("qqAlopaa");
         Assert.assertTrue(validate);
     }
+
+    @Test
+    public void givenPasswordWithNumericWhenValidReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validPassWithNum("Aqw1AAAs");
+        Assert.assertTrue(validate);
+    }
 }
