@@ -26,4 +26,10 @@ public class UserRegistrationTest {
         Assert.assertTrue(validate);
     }
 
+    @Test
+    public void givenMobileNumberWhenProperReturntrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validMobileNumber("91 8081234567");
+        Assert.assertTrue(validate);
+    }
 }
