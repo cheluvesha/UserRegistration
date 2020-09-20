@@ -53,4 +53,11 @@ public class UserRegistrationTest {
         boolean validate = userRegistration.validPassWithNum("Aqw1AAAs");
         Assert.assertTrue(validate);
     }
+
+    @Test
+    public void givenPasswordWithSymbolWhenValidReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validPassWithSymbol("aqQw3&ada");
+        Assert.assertTrue(validate);
+    }
 }
