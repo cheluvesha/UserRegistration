@@ -27,9 +27,16 @@ public class UserRegistrationTest {
     }
 
     @Test
-    public void givenMobileNumberWhenProperReturntrue() {
+    public void givenMobileNumberWhenProperReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
         boolean validate = userRegistration.validMobileNumber("91 8081234567");
+        Assert.assertTrue(validate);
+    }
+
+    @Test
+    public void givenPasswordWith8CharsWhenProperReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validPassWith8Chars("aWslop11");
         Assert.assertTrue(validate);
     }
 }
