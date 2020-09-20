@@ -8,21 +8,21 @@ public class UserRegistration {
     private Matcher matcher;
     private static final String FIRSTNAME = "^[A-Z]{1}[a-z]{2,}$";
     private static final String LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
-    private static final String EMAIL = "^[a-zA-Z0-9.]+[@][a-zA-Z0-9]+[.]co(m|.in)$";
+    private static final String EMAIL = "^[A-Za-z0-9+_.-]+@(.+)$";
     private static final String MNUMBER = "^[91]+[ ]{0,1}+[6-9][0-9]{9}$";
     private static final String MIN8PASSWORD = "^.{8,}$";
     private static final String PASS1UPPERCASE = ".*[A-Z].*";
     private static final String PASSWITHNUM = "^[A-Za-z0-9]{8,}";
     private static final String PASSSYMBOL = "^[0-9A-Za-z]*[!@#$%&][A-Za-z0-9]*$";
     public UserRegistration() {
-        pattern = pattern.compile(FIRSTNAME);
-        pattern = pattern.compile(LASTNAME);
+       // pattern = pattern.compile(FIRSTNAME);
+       // pattern = pattern.compile(LASTNAME);
         pattern = pattern.compile(EMAIL);
-        pattern = pattern.compile(MNUMBER);
-        pattern = pattern.compile(MIN8PASSWORD);
-        pattern = pattern.compile(PASS1UPPERCASE);
-        pattern = pattern.compile(PASSWITHNUM);
-        pattern = pattern.compile(PASSSYMBOL);
+       // pattern = pattern.compile(MNUMBER);
+       // pattern = pattern.compile(MIN8PASSWORD);
+       // pattern = pattern.compile(PASS1UPPERCASE);
+       // pattern = pattern.compile(PASSWITHNUM);
+      //  pattern = pattern.compile(PASSSYMBOL);
     }
     public boolean validFirstName(String firstName) {
         matcher = pattern.matcher(firstName);
