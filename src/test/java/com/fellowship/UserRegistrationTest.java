@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistrationTest {
+
     @Test
     public void givenFirstNameWhenProperReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
@@ -17,4 +18,12 @@ public class UserRegistrationTest {
         boolean validate = userRegistration.validLastName("Bharatha");
         Assert.assertTrue(validate);
     }
+
+    @Test
+    public void givenEmailWhenProperReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validEmail("abc.xyz.@bl.co.in");
+        Assert.assertTrue(validate);
+    }
+
 }
