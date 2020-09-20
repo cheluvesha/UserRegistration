@@ -10,13 +10,15 @@ public class UserRegistration {
     private static final String LASTNAME = "^[A-Z]{1}[a-z]{2,}$";
     private static final String EMAIL = "^[a-zA-Z0-9.]+[@][a-zA-Z0-9]+[.]co(m|.in)$";
     private static final String MNUMBER = "^[91]+[ ]{0,1}+[6-9][0-9]{9}$";
-    private static final String MIN8PASSWORD ="[a-zA-Z0-9]{8,}$";
+    private static final String MIN8PASSWORD = "^.{8,}$";
+    private static final String PASS1UPPERCASE = ".*[A-Z].*";
     public UserRegistration() {
         pattern = pattern.compile(FIRSTNAME);
         pattern = pattern.compile(LASTNAME);
         pattern = pattern.compile(EMAIL);
         pattern = pattern.compile(MNUMBER);
         pattern = pattern.compile(MIN8PASSWORD);
+        pattern = pattern.compile(PASS1UPPERCASE);
     }
     public boolean validFirstName(String firstName) {
         matcher = pattern.matcher(firstName);
@@ -39,6 +41,11 @@ public class UserRegistration {
     }
     public boolean validPassWith8Chars(String pass8Chars) {
         matcher = pattern.matcher(pass8Chars);
+        return matcher.matches();
+    }
+
+    public boolean validPass1UpperCase(String passWithUppercase) {
+        matcher = pattern.matcher(passWithUppercase);
         return matcher.matches();
     }
 }

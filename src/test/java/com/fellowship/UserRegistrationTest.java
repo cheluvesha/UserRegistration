@@ -36,7 +36,14 @@ public class UserRegistrationTest {
     @Test
     public void givenPasswordWith8CharsWhenProperReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean validate = userRegistration.validPassWith8Chars("aWslop11");
+        boolean validate = userRegistration.validPassWith8Chars("aWSlop11");
+        Assert.assertTrue(validate);
+    }
+
+    @Test
+    public void givenPasswordWith1UppercaseWhenProperReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean validate = userRegistration.validPass1UpperCase("qqAlopaa");
         Assert.assertTrue(validate);
     }
 }
